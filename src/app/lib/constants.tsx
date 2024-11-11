@@ -3,8 +3,9 @@ export const skills = [
   "Typescript",
   "React.js",
   "Next.js",
-  "React Native",
-  "Redux",
+  "React Query",
+  "SWR",
+  "Redux Toolkit",
   "Zustand",
   "Tawilwind css",
   "Material UI",
@@ -17,7 +18,6 @@ export const skills = [
   "Docker",
   "Vite",
   "Git/Github",
-  "Wordpress",
   "Python",
 ];
 
