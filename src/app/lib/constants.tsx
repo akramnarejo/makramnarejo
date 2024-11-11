@@ -23,6 +23,15 @@ export const skills = [
 
 export const projects = [
   {
+    title: "On Demand",
+    thumbnail: "/images/on-demand.png",
+    landingpage: "https://on-demand.io/",
+    portal: "https://app.on-demand.io/",
+    source: "",
+    description:
+      "The OnDemand AI platform, powered by RAG technology, enables users to manage AI products with a library of predefined models, flexible BYOI and BYOM options, dynamic APIs, robust data integration, smart file handling, and an advanced vector database for fast, detailed responses and efficient document management.",
+  },
+  {
     title: "Trukkr",
     thumbnail: "/images/portal-trukkr.png",
     landingpage: "https://trukkr.pk",
