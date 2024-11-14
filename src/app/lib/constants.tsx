@@ -58,15 +58,15 @@ export const projects = [
     description:
       "Open source chrome extention to keep your favorite urls either by typing it manually or clicking the TAB SAVE  button to grab your current tab url for you.",
   },
-  {
-    title: "Savious",
-    thumbnail: "/images/savings.png",
-    landingpage: "https://savings-calculator-roan.vercel.app/",
-    portal: "",
-    source: "https://github.com/akramnarejo/savings-calculator",
-    description:
-      "Savings calculator to plan savings over multiple periods.",
-  },
+  // {
+  //   title: "Savious",
+  //   thumbnail: "/images/savings.png",
+  //   landingpage: "https://savings-calculator-roan.vercel.app/",
+  //   portal: "",
+  //   source: "https://github.com/akramnarejo/savings-calculator",
+  //   description:
+  //     "Savings calculator to plan savings over multiple periods.",
+  // },
   {
       title: "skvllpkvnz",
       thumbnail: "/images/nft.png",
