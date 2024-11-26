@@ -49,16 +49,6 @@ export const projects = [
       description: "Bailey motors, cars store to purchase  new or used car."
   },
   {
-    title: "URL Keeper",
-    thumbnail: "/images/url-keeper.png",
-    landingpage:
-      "https://chromewebstore.google.com/detail/url-keeper/ccelhojgnbidfilmdgpfnoncffmiogik",
-    portal: "",
-    source: "https://github.com/akramnarejo/url-keeper#url-keepr",
-    description:
-      "Open source chrome extention to keep your favorite urls either by typing it manually or clicking the TAB SAVE  button to grab your current tab url for you.",
-  },
-  {
     title: "CircleUp",
     thumbnail: "/images/cirrcle-up.jpg",
     landingpage:
@@ -67,6 +57,16 @@ export const projects = [
     source: "",
     description:
       "CircleUp is a modern social networking platform that fosters meaningful connections and empowers communities. Share your thoughts, connect with like-minded individuals, and explore new opportunities—all in one place.",
+  },
+  {
+    title: "URL Keeper",
+    thumbnail: "/images/url-keeper.png",
+    landingpage:
+      "https://chromewebstore.google.com/detail/url-keeper/ccelhojgnbidfilmdgpfnoncffmiogik",
+    portal: "",
+    source: "https://github.com/akramnarejo/url-keeper#url-keepr",
+    description:
+      "Open source chrome extention to keep your favorite urls either by typing it manually or clicking the TAB SAVE  button to grab your current tab url for you.",
   },
   // {
   //   title: "Savious",
