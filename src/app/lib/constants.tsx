@@ -3,6 +3,7 @@ export const skills = [
   "Typescript",
   "React.js",
   "Next.js",
+  "Figma",
   "React Query",
   "SWR",
   "Redux Toolkit",
