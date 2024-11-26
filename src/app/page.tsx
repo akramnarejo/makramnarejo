@@ -14,7 +14,7 @@ export default function Home() {
 
         <p className="">
           A{" "}<Link href="/work" className="dark:bg-[#111] bg-[#eee] rounded-lg px-1 border border-[#333] text-blue-800 hover:text-blue-500 ease-linear duration-500">Frontend Engineer 👨‍💻</Link>{" "}
-          passionate about crafting seamless and dynamic user experiences UI/UX.
+          passionate about crafting seamless user experience UI/UX.
             Leveraging modern technology, I deliver products that resonate with
             users and drive results for businesses.
         </p>
