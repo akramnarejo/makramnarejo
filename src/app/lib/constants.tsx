@@ -30,7 +30,7 @@ export const projects = [
     portal: "https://app.on-demand.io/",
     source: "",
     description:
-      "The OnDemand AI platform, powered by RAG technology, enables users to manage AI products with a library of predefined models, flexible BYOI and BYOM options, dynamic APIs, robust data integration, smart file handling, and an advanced vector database for fast, detailed responses and efficient document management.",
+      "The OnDemand AI platform, powered by RAG technology, enables users to manage AI products with a library of predefined models.",
   },
   {
     title: "Trukkr",
@@ -47,7 +47,7 @@ export const projects = [
       landingpage: "https://next-js-five-lemon-14.vercel.app/",
       source: "",
       portal: "",
-      description: "Bailey motors, cars store to purchase  new or used car."
+      description: "Bailey Motors is a family-focused car lot and repair shop dedicated to trust, transparency, and building lasting customer relationships."
   },
   {
     title: "CircleUp",
