@@ -72,11 +72,10 @@ import { projects } from "./lib/constants";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
-      <main className="max-w-screen-xl mx-auto px-4 py-8 space-y-24">
+    <main className="max-w-screen-xl mx-auto px-4 py-8 space-y-12 md:space-y-16 lg:space-y-24">
         <section className="space-y-8 relative overflow-hidden">
           <div className="space-y-4 relative z-10">
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-gray-900 dark:text-gray-100 leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-gray-900 dark:text-gray-100 leading-tight">
               G&apos;day, I&apos;m Akram{" "}
               <span className="inline-block animate-pulse origin-bottom-right">👋</span>
             </h1>
@@ -85,7 +84,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="space-y-4 animate-fade-in animation-delay-400 text-lg sm:text-xl lg:text-2xl relative z-10 max-w-4xl">
+          <div className="space-y-4 animate-fade-in animation-delay-400 text-base sm:text-xl lg:text-2xl relative z-10 max-w-4xl">
             <p className="text-gray-600 dark:text-gray-300">
               Currently, working at{" "}
               <Link href="https://schoolhack.ai/" className="text-blue-600 dark:text-blue-400 hover:underline">
@@ -109,7 +108,7 @@ export default function Home() {
 
         <section className="space-y-8 animate-fade-in animation-delay-600">
           <div className="flex items-center justify-between">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">Featured Projects</h2>
+          <h2 className="text-2xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">Featured Projects</h2>
           <Link href="/work" className="group inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline whitespace-nowrap text-lg">
               View all
               <FiArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1" />
@@ -122,7 +121,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-    </div>
   )
 }
 
