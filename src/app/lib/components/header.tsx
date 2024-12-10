@@ -15,7 +15,7 @@ const Header = () => {
         width={50}
         height={50}
       />
-      <ul className="flex gap-4 text-[#666] text-2xl">
+      <ul className="flex gap-4 text-2xl">
         <li className="cursor-pointer hover:text-blue-600 hover:scale-125 duration-500 ease-in-out">
           <Link href={pathname === "/" ? "/work" : "/"}>
             {pathname == "/" ? "Work" : "Home"}
