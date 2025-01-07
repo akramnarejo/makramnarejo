@@ -128,7 +128,7 @@ export default function Home() {
 
 function ProjectCard({ title, description, landingpage, image }: Project) {
   return (
-    <div className="dark:bg-[#0f0f0f] border dark:border-[#444] border-[#999]0 rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
+    <div className="dark:bg-[#0f0f0f] border dark:border-[#444] border-[#999] rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
       <Image src={image} alt={title} width={400} height={200} className="w-full h-48 object-cover" />
       <div className="p-4">
         <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">{title}</h3>
