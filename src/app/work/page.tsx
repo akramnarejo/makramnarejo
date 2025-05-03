@@ -5,6 +5,7 @@ import Card from "../lib/components/card";
 import { motion } from "framer-motion";
 
 const Page = () => {
+  // dummy commit
   return (
     <div className="mt-4">
       <h2 className="[font-size:_clamp(2rem,3vw,6rem)] font-bold dark:text-white">
