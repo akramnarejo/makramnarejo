@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 
 const Header = () => {
   const pathname = usePathname();
+  //dummy text
   return (
     <div className="flex gap-8 flex-wrap items-center mb-4 lg:mb-12 bg-white dark:bg-black sticky top-0 z-50 p-2">
       <Image
