@@ -7,9 +7,9 @@ import { usePathname } from "next/navigation";
 const Header = () => {
   const pathname = usePathname();
   return (
-    <div className="flex gap-8 flex-wrap items-center mb-4 lg:mb-12 bg-white dark:bg-black sticky top-0 z-50 py-2">
+    <div className="flex gap-8 flex-wrap items-center mb-4 lg:mb-12 bg-white dark:bg-black sticky top-0 z-50 p-2">
       <Image
-        className="rounded-full ring-2 ring-blue-400 border border-gray-500"
+        className="rounded-sm ring-1 -rotate-12 hover:rotate-0 hover:scale-150 duration-500 ease-in-out ring-blue-400 border border-gray-500"
         src="/images/profile.jpeg"
         alt="profile image"
         width={50}
