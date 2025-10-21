@@ -8,7 +8,7 @@ const Header = () => {
   const pathname = usePathname();
   //dummy text
   return (
-    <div className="flex gap-8 flex-wrap items-center mb-4 lg:mb-12 bg-white dark:bg-black sticky top-0 z-50 p-2">
+    <div className="flex gap-8 flex-wrap items-center mb-4 lg:mb-12 bg-[rgba(255,255,255,0.1)] dark:bg-[rgba(0,0,0,0.1)] backdrop-blur-md sticky top-0 z-50 p-2">
       <Image
         className="rounded-sm ring-1 -rotate-12 hover:rotate-0 hover:scale-150 duration-500 ease-in-out ring-blue-400 border border-gray-500"
         src="/images/profile.jpeg"
