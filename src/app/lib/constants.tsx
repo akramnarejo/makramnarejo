@@ -35,8 +35,8 @@ export const projects = [
   {
     title: "Trukkr",
     thumbnail: "/images/portal-trukkr.png",
-    landingpage: "https://trukkr.pk",
-    portal: "https://portal.trukkr.pk",
+    landingpage: "https://trukkr.ai",
+    portal: "https://trukkr.ai/transporter-portal",
     source: "",
     description:
       "Pakistani start-up (6M USD funding) and the first online logistics marketplace connecting carriers with shippers.",
@@ -50,16 +50,6 @@ export const projects = [
       description: "Bailey Motors is a family-focused car lot and repair shop dedicated to trust, transparency, and building lasting customer relationships."
   },
   {
-    title: "CircleUp",
-    thumbnail: "/images/cirrcle-up.jpg",
-    landingpage:
-      "",
-    portal: "",
-    source: "",
-    description:
-      "CircleUp is a modern social networking platform that fosters meaningful connections and empowers communities. Share your thoughts, connect with like-minded individuals, and explore new opportunities—all in one place.",
-  },
-  {
     title: "URL Keeper",
     thumbnail: "/images/url-keeper.png",
     landingpage:
@@ -69,15 +59,15 @@ export const projects = [
     description:
       "Open source chrome extention to keep your favorite urls either by typing it manually or clicking the TAB SAVE  button to grab your current tab url for you.",
   },
-  // {
-  //   title: "Savious",
-  //   thumbnail: "/images/savings.png",
-  //   landingpage: "https://savings-calculator-roan.vercel.app/",
-  //   portal: "",
-  //   source: "https://github.com/akramnarejo/savings-calculator",
-  //   description:
-  //     "Savings calculator to plan savings over multiple periods.",
-  // },
+  {
+    title: "Sav",
+    thumbnail: "/images/savings.png",
+    landingpage: "https://savings-calculator-roan.vercel.app/",
+    portal: "",
+    source: "https://github.com/akramnarejo/savings-calculator",
+    description:
+      "Savings calculator to plan savings over multiple periods.",
+  },
   {
       title: "skvllpkvnz",
       thumbnail: "/images/nft.png",
