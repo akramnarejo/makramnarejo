@@ -21,7 +21,7 @@ export default function Home() {
           <div className="space-y-4 animate-fade-in animation-delay-400 font-light text-base sm:text-xl lg:text-2xl relative z-10 max-w-4xl">
             <p className="text-gray-600 dark:text-gray-300">
               Currently, working at{" "}
-              <Link href="https://airev.ai/" className="text-white bg-purple-600 px-4 py-1 hover:underline">
+              <Link href="https://airev.ai/" className="text-purple-500 hover:underline">
                 Airev
               </Link>
               , developing{" "}
