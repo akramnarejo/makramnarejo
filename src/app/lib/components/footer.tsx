@@ -13,7 +13,7 @@ const Footer = () => {
     <div className="flex space-x-4">
       <SocialLink href="https://linkedin.com/in/akramnarejo" icon={<FaLinkedin />} label="LinkedIn" />
       <SocialLink href="https://github.com/akramnarejo" icon={<FaGithub />} label="GitHub" />
-      <SocialLink href="https://instagram.com/akramnarejo" icon={<FaInstagram />} label="Instagram" />
+      {/* <SocialLink href="https://instagram.com/akramnarejo" icon={<FaInstagram />} label="Instagram" /> */}
     </div>
   </footer>
 }
