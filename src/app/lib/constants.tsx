@@ -1,37 +1,48 @@
-export const skills = [
-  "Javascript",
-  "Typescript",
-  "React.js",
-  "Next.js",
-  "Figma",
-  "React Query",
-  "SWR",
-  "Redux Toolkit",
-  "Zustand",
-  "Tawilwind css",
-  "Material UI",
-  "Shadcn UI",
-  "Node.js",
-  "Mongodb",
-  "Firebase",
-  "Express",
-  "APIs Integration",
-  "Docker",
-  "Vite",
-  "Git/Github",
-  "Python",
+export const skillCategories = [
+  {
+    label: "Core",
+    skills: ["TypeScript", "React", "Next.js", "Tailwind CSS"],
+  },
+  {
+    label: "State & Data",
+    skills: ["React Query", "SWR", "Redux Toolkit", "Zustand"],
+  },
+  {
+    label: "UI & Design",
+    skills: ["Figma", "Shadcn UI", "Material UI"],
+  },
+  {
+    label: "Tooling",
+    skills: ["Vite", "Docker", "Git", "Node.js"],
+  },
+];
+
+export const skills = skillCategories.flatMap((category) => category.skills);
+
+export const expertise = [
+  {
+    title: "Interface architecture",
+    description:
+      "Component-driven systems with clear boundaries, reusable patterns, and type-safe APIs across complex product surfaces.",
+  },
+  {
+    title: "Performance & reliability",
+    description:
+      "Core Web Vitals, bundle optimization, and resilient data flows for apps where latency and uptime matter.",
+  },
+  {
+    title: "Design systems",
+    description:
+      "Token-based UI, accessible primitives, and consistent interaction patterns that scale across teams.",
+  },
+  {
+    title: "Product collaboration",
+    description:
+      "Partnering with design and backend to ship polished flows — from discovery through production.",
+  },
 ];
 
 export const projects = [
-  {
-    title: "On Demand",
-    thumbnail: "/images/on-demand.png",
-    landingpage: "https://on-demand.io/",
-    portal: "https://app.on-demand.io/",
-    source: "",
-    description:
-      "The OnDemand AI platform, powered by RAG technology, enables users to manage AI products with a library of predefined models.",
-  },
   {
     title: "Trukkr",
     thumbnail: "/images/portal-trukkr.png",
@@ -39,15 +50,38 @@ export const projects = [
     portal: "https://trukkr.ai/transporter-portal",
     source: "",
     description:
-      "Pakistani start-up (6M USD funding) and the first online logistics marketplace connecting carriers with shippers.",
+      "Logistics marketplace ($6M funding) connecting carriers with shippers — dashboards, portals, and high-volume transactional flows.",
+    featured: true,
   },
   {
-      title: "Bailey Motors",
-      thumbnail: "/images/bailey-motors.png",
-      landingpage: "https://next-js-five-lemon-14.vercel.app/",
-      source: "",
-      portal: "",
-      description: "Bailey Motors is a family-focused car lot and repair shop dedicated to trust, transparency, and building lasting customer relationships."
+    title: "On Demand",
+    thumbnail: "/images/on-demand.png",
+    landingpage: "https://on-demand.io/",
+    portal: "https://app.on-demand.io/",
+    source: "",
+    description:
+      "AI platform powered by RAG technology — complex data interfaces, real-time product management, and enterprise-grade UX.",
+    featured: true,
+  },
+  {
+    title: "Sav",
+    thumbnail: "/images/savings.png",
+    landingpage: "https://savings-calculator-roan.vercel.app/",
+    portal: "",
+    source: "https://github.com/akramnarejo/savings-calculator",
+    description:
+      "Multi-period savings calculator — financial planning UI with clear data visualization and input validation.",
+    featured: true,
+  },
+  {
+    title: "Bailey Motors",
+    thumbnail: "/images/bailey-motors.png",
+    landingpage: "https://next-js-five-lemon-14.vercel.app/",
+    source: "",
+    portal: "",
+    description:
+      "Family-focused car lot and repair shop site built for trust, transparency, and lasting customer relationships.",
+    featured: false,
   },
   {
     title: "URL Keeper",
@@ -57,23 +91,18 @@ export const projects = [
     portal: "",
     source: "https://github.com/akramnarejo/url-keeper#url-keepr",
     description:
-      "Open source chrome extention to keep your favorite urls either by typing it manually or clicking the TAB SAVE  button to grab your current tab url for you.",
+      "Open-source Chrome extension to save and organize URLs with a lightweight, focused interface.",
+    featured: false,
   },
   {
-    title: "Sav",
-    thumbnail: "/images/savings.png",
-    landingpage: "https://savings-calculator-roan.vercel.app/",
+    title: "skvllpkvnz",
+    thumbnail: "/images/nft.png",
+    landingpage: "https://akramnarejo.github.io/skvllpkvz/",
+    source: "https://github.com/akramnarejo/skvllpkvz",
     portal: "",
-    source: "https://github.com/akramnarejo/savings-calculator",
-    description:
-      "Savings calculator to plan savings over multiple periods.",
-  },
-  {
-      title: "skvllpkvnz",
-      thumbnail: "/images/nft.png",
-      landingpage: "https://akramnarejo.github.io/skvllpkvz/",
-      source: "https://github.com/akramnarejo/skvllpkvz",
-      portal: "",
-      description: "NFT landing page"
+    description: "NFT landing page with responsive layout and motion design.",
+    featured: false,
   },
 ];
+
+export const featuredProjects = projects.filter((project) => project.featured);

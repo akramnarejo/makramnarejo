@@ -1,46 +1,58 @@
 "use client";
-import React from "react";
-import { skills, projects } from "../lib/constants";
+
+import { projects, skillCategories } from "../lib/constants";
 import Card from "../lib/components/card";
-import { motion } from "framer-motion";
 
-const Page = () => {
-  // dummy commit
+export default function WorkPage() {
   return (
-    <div className="mt-4">
-      <h2 className="[font-size:_clamp(2rem,3vw,6rem)] font-bold dark:text-white">
-        Work
-      </h2>
-      <p className="text-gray-600 font-light dark:text-gray-300 [font-size:_clamp(1.2rem,1.5vw,2rem)]">
-        For the past 5 years developing mobile responsive and scalable web apps, providing seamless user experience using modern technologies. So far, I have worked with the following skills and learning more.
-      </p>
-      {/* skills */}
-      <ul className="flex gap-4 flex-wrap mt-8">
-        {skills.map((item, ind) => {
-          return (
-            <motion.li
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 2, type: "sping", ease: "easeOut" }}
-              viewport={{once: true}}
-              key={ind}
-              className={`font-light md:text-xl dark:bg-black border dark:border-[#444] border-[#999] dark:hover:border-blue-200 dark:hover:text-blue-200 hover:border-blue-400 hover:text-blue-600 p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:skew-y-3 ease-in-out duration-500 hover:scale-110`}
-            >
-              {item}
-            </motion.li>
-          );
-        })}
-      </ul>
+    <div className="space-y-16 pb-8">
+      <section className="space-y-5">
+        <p className="text-xs font-medium uppercase tracking-widest text-accent">
+          Work
+        </p>
+        <h1 className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+          Projects & stack
+        </h1>
+        <p className="max-w-2xl text-lg leading-relaxed text-muted">
+          Over 5 years building responsive, production-grade web applications —
+          from AI platforms and logistics marketplaces to financial calculators.
+          I&apos;m especially interested in AI products and fintech, and I
+          prioritize type safety, performance, and interfaces that hold up under
+          real-world complexity.
+        </p>
+      </section>
 
-      {/* Projects */}
-      <h2 className="mt-16 mb-2 text-4xl font-semibold">Projects</h2>
-      <div className="max-w-full grid gap-8 md:grid-cols-2 mt-16 mb-4">
-        {projects.map((item, i) => (
-          <Card data={item} key={i} />
-        ))}
-      </div>
+      <section className="space-y-8">
+        <h2 className="text-xl font-medium text-foreground">Skills</h2>
+        <div className="grid gap-8 sm:grid-cols-2">
+          {skillCategories.map((category) => (
+            <div key={category.label} className="space-y-3">
+              <h3 className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
+                {category.label}
+              </h3>
+              <ul className="flex flex-wrap gap-2">
+                {category.skills.map((skill) => (
+                  <li
+                    key={skill}
+                    className="rounded-md border border-border px-3 py-1.5 text-sm text-muted"
+                  >
+                    {skill}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="space-y-8">
+        <h2 className="text-xl font-medium text-foreground">All projects</h2>
+        <div className="grid gap-6 md:grid-cols-2">
+          {projects.map((project) => (
+            <Card data={project} key={project.title} />
+          ))}
+        </div>
+      </section>
     </div>
   );
-};
-
-export default Page;
+}

@@ -1,32 +1,59 @@
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa6";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
+export default function Footer() {
+  return (
+    <footer className="mt-24 border-t border-border pt-8">
+      <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="space-y-1">
+          <p className="text-sm text-muted">
+            Open to senior frontend roles in AI and fintech.
+          </p>
+          <p className="text-sm text-muted">
+            <Link
+              href="mailto:makramnarejo@gmail.com"
+              className="text-foreground transition-colors hover:text-accent"
+            >
+              makramnarejo@gmail.com
+            </Link>
+          </p>
+        </div>
 
-const Footer = () => {
-    return <footer className="flex flex-col sm:flex-row items-center justify-between pt-8 border-t border-gray-200 dark:border-gray-700 animate-fade-in animation-delay-800">
-    <p className="text-sm lg:text-base text-gray-500 dark:text-gray-400 mb-4 sm:mb-0">
-      Get in touch:{" "}
-      <Link href="mailto:makramnarejo@gmail.com" className="hover:underline">
-        makramnarejo@gmail.com
-      </Link>
-    </p>
-    <div className="flex space-x-4">
-      <SocialLink href="https://linkedin.com/in/akramnarejo" icon={<FaLinkedin />} label="LinkedIn" />
-      <SocialLink href="https://github.com/akramnarejo" icon={<FaGithub />} label="GitHub" />
-      {/* <SocialLink href="https://instagram.com/akramnarejo" icon={<FaInstagram />} label="Instagram" /> */}
-    </div>
-  </footer>
+        <div className="flex items-center gap-5">
+          <SocialLink
+            href="https://linkedin.com/in/akramnarejo"
+            icon={<FaLinkedin className="h-4 w-4" />}
+            label="LinkedIn"
+          />
+          <SocialLink
+            href="https://github.com/akramnarejo"
+            icon={<FaGithub className="h-4 w-4" />}
+            label="GitHub"
+          />
+        </div>
+      </div>
+    </footer>
+  );
 }
 
-export default Footer
-
-function SocialLink({ href, icon, label }: { href: string; icon: React.ReactNode; label: string }) {
-    return (
-      <Link href={href} target="_blank" rel="noopener noreferrer">
-        <button className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100">
-          {icon}
-          <span className="sr-only">{label}</span>
-        </button>
-      </Link>
-    )
-  }
+function SocialLink({
+  href,
+  icon,
+  label,
+}: {
+  href: string;
+  icon: React.ReactNode;
+  label: string;
+}) {
+  return (
+    <Link
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-muted transition-colors hover:text-foreground"
+      aria-label={label}
+    >
+      {icon}
+    </Link>
+  );
+}

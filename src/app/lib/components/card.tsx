@@ -1,69 +1,69 @@
 "use client";
-import React from "react";
+
 import Image from "next/image";
 import Link from "next/link";
 import { GoArrowUpRight } from "react-icons/go";
 import { motion } from "framer-motion";
 
+import type { Project } from "./project-card";
+
 interface Props {
-  data: {
-    title: string;
-    thumbnail: string;
-    landingpage: string;
-    portal: string;
-    source: string;
-    description: string;
-  };
+  data: Project;
 }
-const Card = ({ data }: Props) => {
+
+export default function Card({ data }: Props) {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 2, type: "tween" }}
-      className="dark:bg-[#0f0f0f] border dark:border-[#444] border-[#999] rounded-lg p-2 hover:border-blue-400 dark:hover:border-blue-400 duration-500 hover:scale-x-105"
+    <motion.article
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      viewport={{ once: true }}
+      className="group overflow-hidden rounded-xl border border-border bg-surface transition-colors hover:border-accent/40"
     >
-      <Link href={data.landingpage} target="_blank">
-        <div className="h-80 w-full relative overflow-hidden cursor-pointer">
-          <Image
-            className="rounded-t-lg object-cover"
-            src={data.thumbnail}
-            alt={data.title}
-            fill={true}
-          />
-        </div>
+      <Link
+        href={data.landingpage}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative block h-64 overflow-hidden"
+      >
+        <Image
+          className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          src={data.thumbnail}
+          alt={data.title}
+          fill
+        />
       </Link>
 
-      <div className="py-5 px-3">
-        <Link href={data.landingpage} target="_blank">
-          <h5 className="dark:text-white inline font-bold text-2xl tracking-tight mb-2 hover:text-blue-400">
+      <div className="space-y-3 p-5">
+        <Link href={data.landingpage} target="_blank" rel="noopener noreferrer">
+          <h3 className="text-xl font-medium tracking-tight text-foreground transition-colors group-hover:text-accent">
             {data.title}
-          </h5>
+          </h3>
         </Link>
-        <p className="font-normal text-[#666] dark:text-[#999] mb-3">
-          {data.description}
-        </p>
-        {data.portal && (
-          <Link
-            className="dark:text-[#e2e2e2] hover:text-blue-400 flex gap-1 items-center"
-            href={data.portal}
-            target="_blank"
-          >
-            App <GoArrowUpRight />
-          </Link>
-        )}
-        {data.source && (
-          <Link
-            className="dark:text-[#e2e2e2] hover:text-blue-400 flex gap-1 items-center"
-            href={data.source}
-            target="_blank"
-          >
-            Code <GoArrowUpRight />
-          </Link>
-        )}
+        <p className="text-sm leading-relaxed text-muted">{data.description}</p>
+        <div className="flex gap-4 pt-1 text-sm">
+          {data.portal && (
+            <Link
+              className="text-muted transition-colors hover:text-accent"
+              href={data.portal}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              App <GoArrowUpRight className="inline" />
+            </Link>
+          )}
+          {data.source && (
+            <Link
+              className="text-muted transition-colors hover:text-accent"
+              href={data.source}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Code <GoArrowUpRight className="inline" />
+            </Link>
+          )}
+        </div>
       </div>
-    </motion.div>
+    </motion.article>
   );
-};
-
-export default Card;
+}

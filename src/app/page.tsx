@@ -1,106 +1,163 @@
-import Image from "next/image";
 import Link from "next/link";
-import { FiExternalLink, FiArrowRight } from "react-icons/fi";
+import { FiArrowRight } from "react-icons/fi";
 
-import { projects } from "./lib/constants";
+import ProjectCard from "./lib/components/project-card";
+import {
+  expertise,
+  featuredProjects,
+  skillCategories,
+} from "./lib/constants";
 
 export default function Home() {
   return (
-    <main className="max-w-screen-xl mx-auto px-4 py-8 space-y-12 md:space-y-16 lg:space-y-24">
-        <section className="space-y-8 relative overflow-hidden">
-          <div className="space-y-4 relative z-10">
-            <h1 className="text-3xl sm:text-4xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-gray-900 dark:text-gray-100 leading-tight">
-              G&apos;day, I&apos;m Akram{" "}
-              <span className="inline-block animate-pulse origin-bottom-right">👋</span>
-            </h1>
-            <p className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-gray-600 dark:text-gray-300 animate-fade-in animation-delay-200">
-              Frontend Engineer crafting seamless user experience.
-            </p>
-          </div>
+    <div className="space-y-24 pb-8 md:space-y-32">
+      {/* Hero */}
+      <section className="space-y-8">
+        <div className="space-y-6 opacity-0 animate-fade-up">
+          <p className="text-sm font-medium uppercase tracking-widest text-accent">
+            Senior Frontend Engineer
+          </p>
+          <h1 className="max-w-3xl text-balance text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl">
+            Building interfaces people trust with their data and decisions.
+          </h1>
+        </div>
 
-          <div className="space-y-4 animate-fade-in animation-delay-400 font-light text-base sm:text-xl lg:text-2xl relative z-10 max-w-4xl">
-            <p className="text-gray-600 dark:text-gray-300">
-              Currently, working at{" "}
-              <Link href="https://airev.ai/" className="text-purple-500 hover:underline">
-                Airev
-              </Link>
-              , developing{" "}
-              <Link href="https://on-demand.io" className="text-blue-600 dark:text-blue-400 hover:underline">
-                On-Demand
-              </Link>
-              : a cutting-edge AI Platform as a Service (PaaS) powered by RAG AI technology.
-            </p>
-            <p className="text-gray-600 dark:text-gray-300">
-              Web3 enthusiast for a better tomorrow and hobbyist photographer 📸
-            </p>
-          </div>
-
-          {/* Creative background elements */}
-          {/* <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-          <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-96 h-96 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div> */}
-        </section>
-
-        <section className="space-y-8 animate-fade-in animation-delay-600">
-          <div className="flex items-center justify-between">
-          <h2 className="text-2xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">Featured Projects</h2>
-          <Link href="/work" className="group inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline whitespace-nowrap text-lg">
-              View all
-              <FiArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1" />
+        <div className="max-w-2xl space-y-5 opacity-0 animate-fade-up-delay-1">
+          <p className="text-lg leading-relaxed text-muted">
+            I&apos;m Akram — a frontend engineer with 5+ years shipping
+            responsive, scalable web applications. Currently at{" "}
+            <Link
+              href="https://airev.ai/"
+              className="text-foreground underline decoration-border underline-offset-4 transition-colors hover:text-accent hover:decoration-accent/40"
+            >
+              Airev
             </Link>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.slice(0, 3).map((project, index) => (
-              <ProjectCard key={index} title={project.title} description={project.description} image={project.thumbnail} landingpage={project.landingpage} />
-            ))}
-          </div>
-        </section>
-      </main>
-  )
-}
+            , building{" "}
+            <Link
+              href="https://on-demand.io"
+              className="text-foreground underline decoration-border underline-offset-4 transition-colors hover:text-accent hover:decoration-accent/40"
+            >
+              On-Demand
+            </Link>
+            , an AI platform for managing complex product workflows.
+          </p>
+          <p className="text-lg leading-relaxed text-muted">
+            I&apos;m focused on building AI products and fintech — intelligent
+            platforms, agentic workflows, payments, financial data, and
+            regulated surfaces where clarity, performance, and accessibility
+            aren&apos;t optional. I care about the craft of frontend:
+            architecture, design systems, and the details that make complex
+            products feel effortless.
+          </p>
+        </div>
 
+        <div className="flex flex-wrap gap-4 opacity-0 animate-fade-up-delay-2">
+          <Link
+            href="/work"
+            className="inline-flex items-center gap-2 rounded-lg bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
+          >
+            View selected work
+            <FiArrowRight className="h-4 w-4" />
+          </Link>
+          <Link
+            href="mailto:makramnarejo@gmail.com"
+            className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-accent/40 hover:text-accent"
+          >
+            Get in touch
+          </Link>
+        </div>
+      </section>
 
+      {/* Expertise */}
+      <section className="space-y-10">
+        <SectionHeader
+          label="Expertise"
+          title="What I bring to product teams"
+        />
+        <div className="grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2">
+          {expertise.map((item) => (
+            <div
+              key={item.title}
+              className="space-y-2 bg-background p-6 md:p-8"
+            >
+              <h3 className="text-base font-medium text-foreground">
+                {item.title}
+              </h3>
+              <p className="text-sm leading-relaxed text-muted">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-function ProjectCard({ title, description, landingpage, image }: Project) {
-  return (
-    <div className="dark:bg-[#0f0f0f] border dark:border-[#444] border-[#999] rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
-      <Image src={image} alt={title} width={400} height={200} className="w-full h-48 object-cover" />
-      <div className="p-4">
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">{title}</h3>
-        <p className="text-gray-600 dark:text-gray-300 mb-4">{description}</p>
-        <Link href={landingpage} target="_blank" className="text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
-          View <FiExternalLink />
-        </Link>
-      </div>
+      {/* Stack */}
+      <section className="space-y-10">
+        <SectionHeader label="Stack" title="Tools I work with daily" />
+        <div className="grid gap-8 sm:grid-cols-2">
+          {skillCategories.map((category) => (
+            <div key={category.label} className="space-y-3">
+              <h3 className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
+                {category.label}
+              </h3>
+              <ul className="flex flex-wrap gap-2">
+                {category.skills.map((skill) => (
+                  <li
+                    key={skill}
+                    className="rounded-md border border-border px-3 py-1.5 text-sm text-muted"
+                  >
+                    {skill}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Featured projects */}
+      <section className="space-y-10">
+        <div className="flex items-end justify-between gap-4">
+          <SectionHeader
+            label="Work"
+            title="Selected projects"
+            className="mb-0"
+          />
+          <Link
+            href="/work"
+            className="group inline-flex shrink-0 items-center gap-1.5 text-sm text-muted transition-colors hover:text-accent"
+          >
+            View all
+            <FiArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {featuredProjects.map((project) => (
+            <ProjectCard key={project.title} project={project} compact />
+          ))}
+        </div>
+      </section>
     </div>
-  )
+  );
 }
 
-interface Project {
+function SectionHeader({
+  label,
+  title,
+  className = "",
+}: {
+  label: string;
   title: string;
-  image: string;
-  landingpage: string;
-  // portal: string;
-  // source: string;
-  description: string;
+  className?: string;
+}) {
+  return (
+    <div className={`space-y-2 ${className}`}>
+      <p className="text-xs font-medium uppercase tracking-widest text-accent">
+        {label}
+      </p>
+      <h2 className="text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
+        {title}
+      </h2>
+    </div>
+  );
 }
-
-// const projects: Project[] = [
-//   {
-//     title: "On-Demand AI Platform",
-//     description: "A cutting-edge AI Platform as a Service (PaaS) powered by RAG technology.",
-//     image: "/placeholder.svg?height=200&width=400",
-//     link: "/work/on-demand"
-//   },
-//   {
-//     title: "Web3 DApp",
-//     description: "A decentralized application showcasing the power of blockchain technology.",
-//     image: "/placeholder.svg?height=200&width=400",
-//     link: "/work/web3-dapp"
-//   },
-//   {
-//     title: "Photography Portfolio",
-//     description: "A responsive gallery showcasing my best photography work.",
-//     image: "/placeholder.svg?height=200&width=400",
-//     link: "/work/photography"
-//   }
-// ]

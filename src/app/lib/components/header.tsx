@@ -1,35 +1,72 @@
 "use client";
-import React from "react";
+
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
-const Header = () => {
-  const pathname = usePathname();
-  //dummy text
-  return (
-    <div className="flex gap-8 flex-wrap items-center mb-4 lg:mb-12 bg-[rgba(255,255,255,0.1)] dark:bg-[rgba(0,0,0,0.1)] backdrop-blur-md sticky top-0 z-50 p-2">
-      <Image
-        className="rounded-sm ring-1 -rotate-12 hover:rotate-0 hover:scale-150 duration-500 ease-in-out ring-blue-400 border border-gray-500"
-        src="/images/profile.jpeg"
-        alt="profile image"
-        width={50}
-        height={50}
-      />
-      <ul className="flex gap-4 text-2xl">
-        <li className="cursor-pointer hover:text-blue-600 hover:scale-125 duration-500 ease-in-out">
-          <Link href={pathname === "/" ? "/work" : "/"}>
-            {pathname == "/" ? "Work" : "Home"}
-          </Link>
-        </li>
-        <li className="cursor-pointer hover:text-blue-600 hover:scale-125 duration-500 ease-in-out">
-          <Link href="https://akramnarejo.medium.com" target="_blank">
-            blog
-          </Link>
-        </li>
-      </ul>
-    </div>
-  );
-};
+const navLinks = [
+  { href: "/work", label: "Work", match: "/work" },
+  { href: "https://akramnarejo.medium.com", label: "Writing", external: true },
+];
 
-export default Header;
+export default function Header() {
+  const pathname = usePathname();
+
+  return (
+    <header className="sticky top-0 z-50 -mx-4 mb-10 border-b border-border/60 bg-background/80 px-4 backdrop-blur-md md:-mx-0 md:px-0">
+      <div className="flex items-center justify-between py-4">
+        <Link href="/" className="flex items-center gap-3 transition-opacity hover:opacity-80">
+          <Image
+            className="rounded-full ring-1 ring-border"
+            src="/images/profile.jpeg"
+            alt="Muhammad Akram"
+            width={36}
+            height={36}
+          />
+          <span className="hidden text-sm font-medium text-foreground sm:inline">
+            Akram Narejo
+          </span>
+        </Link>
+
+        <nav>
+          <ul className="flex items-center gap-6 text-sm">
+            {navLinks.map((link) => {
+              const isActive =
+                !link.external && pathname === link.match;
+
+              if (link.external) {
+                return (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted transition-colors hover:text-foreground"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                );
+              }
+
+              return (
+                <li key={link.label}>
+                  <Link
+                    href={pathname === "/" ? link.href : "/"}
+                    className={`transition-colors ${
+                      isActive
+                        ? "text-foreground"
+                        : "text-muted hover:text-foreground"
+                    }`}
+                  >
+                    {pathname === "/" ? link.label : "Home"}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      </div>
+    </header>
+  );
+}
