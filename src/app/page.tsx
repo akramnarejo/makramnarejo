@@ -18,7 +18,8 @@ export default function Home() {
             Senior Frontend Engineer
           </p>
           <h1 className="max-w-3xl text-balance text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl">
-            Building interfaces people trust with their data and decisions.
+            Engineering scalable frontends that turn complex workflows into
+            converting experiences.
           </h1>
         </div>
 
