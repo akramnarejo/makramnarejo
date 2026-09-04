@@ -15,7 +15,7 @@ export default function Home() {
       <section className="space-y-8">
         <div className="space-y-6 opacity-0 animate-fade-up">
           <p className="text-sm font-medium uppercase tracking-widest text-accent">
-            Senior Frontend Engineer
+            Product Engineer
           </p>
           <h1 className="max-w-3xl text-balance text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl">
             Engineering scalable frontends that turn complex workflows into
@@ -25,7 +25,7 @@ export default function Home() {
 
         <div className="max-w-2xl space-y-5 opacity-0 animate-fade-up-delay-1">
           <p className="text-lg leading-relaxed text-muted">
-            I&apos;m Akram — a frontend engineer with 5+ years shipping
+            I&apos;m Akram — a product engineer with 7+ years shipping
             responsive, scalable web applications. Currently at{" "}
             <Link
               href="https://airev.ai/"
