@@ -10,6 +10,10 @@ Personal site for **Akram Narejo** — senior frontend engineer. A minimal, edit
 - **next/font** — Inter for text, JetBrains Mono for labels and metadata
 - **Vercel Analytics**
 
+## Requirements
+
+- **Node.js 24+** (see `.nvmrc`)
+
 ## Structure
 
 ```

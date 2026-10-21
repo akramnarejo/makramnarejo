@@ -19,7 +19,7 @@ export default function Home() {
       {/* Hero */}
       <section className="pb-4 pt-14 md:pt-24">
         <Reveal>
-          <p className="text-accent font-semibold">{hero.eyebrow}</p>
+          <p className="text-accent font-medium">{hero.eyebrow}</p>
           <h1 className="mt-4 max-w-4xl text-balance text-[2.25rem] font-medium leading-[1.08] tracking-[-0.03em] text-foreground sm:text-5xl md:text-6xl">
             {hero.headline}
           </h1>
