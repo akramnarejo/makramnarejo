@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio
 
-## Getting Started
+Personal site for **Akram Narejo** — senior frontend engineer. A minimal, editorial portfolio: one column of content, hairline rules, a single accent colour, and no client-side animation libraries.
 
-First, run the development server:
+## Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Next.js 14** (App Router, static rendering)
+- **TypeScript** (strict)
+- **Tailwind CSS** with CSS-variable design tokens
+- **next/font** — Inter for text, JetBrains Mono for labels and metadata
+- **Vercel Analytics**
+
+## Structure
+
+```
+src/app/
+├── layout.tsx              # fonts, metadata, header/footer shell
+├── page.tsx                # home
+├── work/page.tsx           # projects + open source
+├── about/page.tsx          # story, principles, experience
+├── globals.css             # tokens, base styles, reveal animation
+└── lib/
+    ├── constants.tsx       # all content lives here
+    └── components/
+        ├── header.tsx
+        ├── footer.tsx
+        ├── section.tsx     # numbered section with a label rail
+        ├── project-row.tsx
+        └── reveal.tsx      # IntersectionObserver-based fade-up
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Commands
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run dev        # start the dev server
+npm run build      # production build
+npm run start      # serve the production build
+npm run lint       # eslint
+npm run typecheck  # tsc --noEmit
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Notes
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Content is defined in `src/app/lib/constants.tsx` — edit there, not in the pages.
+- Light and dark themes follow `prefers-color-scheme`; both are contrast checked.
+- Set `NEXT_PUBLIC_SITE_URL` to override the canonical URL used in metadata.

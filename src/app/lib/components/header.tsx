@@ -1,38 +1,27 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 
-const navLinks = [
-  { href: "/work", label: "Work", match: "/work" },
-  { href: "https://akramnarejo.medium.com", label: "Writing", external: true },
-];
+import { navLinks, profile } from "../constants";
 
 export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 -mx-4 mb-10 border-b border-border/60 bg-background/80 px-4 backdrop-blur-md md:-mx-0 md:px-0">
-      <div className="flex items-center justify-between py-4">
-        <Link href="/" className="flex items-center gap-3 transition-opacity hover:opacity-80">
-          <Image
-            className="rounded-full ring-1 ring-border"
-            src="/images/profile.jpeg"
-            alt="Muhammad Akram"
-            width={36}
-            height={36}
-          />
-          <span className="hidden text-sm font-medium text-foreground sm:inline">
-            Akram Narejo
-          </span>
+    <header className="sticky top-0 z-50 border-b border-border/70 bg-background/80 backdrop-blur-md">
+      <div className="mx-auto flex h-16 w-full max-w-5xl items-center justify-between px-6 md:px-8">
+        <Link
+          href="/"
+          className="text-sm font-medium tracking-tight text-foreground transition-opacity hover:opacity-70"
+        >
+          {profile.name}
         </Link>
 
-        <nav>
-          <ul className="flex items-center gap-6 text-sm">
+        <nav aria-label="Main">
+          <ul className="flex items-center gap-5 text-sm sm:gap-7">
             {navLinks.map((link) => {
-              const isActive =
-                !link.external && pathname === link.match;
+              const isActive = !link.external && pathname === link.href;
 
               if (link.external) {
                 return (
@@ -44,6 +33,7 @@ export default function Header() {
                       className="text-muted transition-colors hover:text-foreground"
                     >
                       {link.label}
+                      <span className="sr-only"> (opens in a new tab)</span>
                     </Link>
                   </li>
                 );
@@ -52,14 +42,15 @@ export default function Header() {
               return (
                 <li key={link.label}>
                   <Link
-                    href={pathname === "/" ? link.href : "/"}
+                    href={link.href}
+                    aria-current={isActive ? "page" : undefined}
                     className={`transition-colors ${
                       isActive
                         ? "text-foreground"
                         : "text-muted hover:text-foreground"
                     }`}
                   >
-                    {pathname === "/" ? link.label : "Home"}
+                    {link.label}
                   </Link>
                 </li>
               );
